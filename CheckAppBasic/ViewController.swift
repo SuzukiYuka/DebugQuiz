@@ -9,17 +9,51 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var index: Int = 0
+    @IBOutlet var label: UILabel!
+    var appleArray: [String] = ["iPhone", "iPad", "Apple Watch"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        label.text = appleArray[index]
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func next() {
+        
+        if index < 2 {
+            index = index + 1
+            label.text = appleArray[index]
+        }
     }
-
+    
+    @IBAction func mae() {
+        
+        if index > 0 {
+            index = index - 1
+            label.text = appleArray[index]
+        }
+    }
+    
+    @IBAction func first() {
+        
+        index = 0
+        label.text = appleArray[index]
+    }
+    
+    @IBAction func second() {
+        
+        index = 1
+        label.text = appleArray[index]
+    }
+    
+    @IBAction func third() {
+        
+        index = 2
+        label.text = appleArray[index]
+    }
+    
+    
 
 }
 
